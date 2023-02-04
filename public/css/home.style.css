@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+*{
+	margin: 0;
+	padding: 0;
+}
+nav{
+	position: fixed;
+	justify-content: space-between;
+	display: flex;
+	border-bottom: 1px solid gray;
+	width: 100%;
+	height: 8%;
+
+}
+.profile{
+	margin-left: 20px;
+	display: flex;
+	height: 100%;
+}
+.profile h1{
+	margin: auto;
+	font-family:'Roboto',arial;
+}
+.notif{
+	height: 100%;
+	width: 50px;
+	display: flex;
+	margin-right: 10px;
+}
+.notif i{
+	font-size: 20px;
+	margin: auto;
+}
+.navbar-buttom{
+	z-index: 5;
+	background-color: #fafcfe;
+	position: fixed;
+	height: 6%;
+	bottom: 0;	
+	width: 100%;
+	display: flex;
+}
+.nb-menu{
+	display: flex;
+	width: 90%;
+	height: 100%;
+	margin: auto;
+	justify-content: space-between;
+}
+.home,.menu-profile,.menu{
+	display: flex;
+	width: 30%;
+	height: 100%;
+}
+a{
+	text-decoration: none;
+}
+.home i,.menu-profile i,.menu i{
+	margin: auto;
+	color: black;
+	font-size: 15px;
+}
+.active{
+	border-top: 2px solid red;
+}
+.active i{
+	color: red;
+}
+.m-void{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	display: flex;
+}
+.void{
+	height: 84%;
+	width: 100%;
+	margin: auto;
+}
+.void .cv-card:first-child{
+	margin-top: 30px;
+}
+.cv-card{
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+	height: 120px;
+}
+.card{
+	text-decoration: none;
+	width: 100%;
+	margin: 10px 20px 10px 20px;
+	height: 100px;
+	box-shadow: 1px 0 5px gray;
+	border-radius: 8px;
+	display: flex;
+}
+.isi{
+	width:50px;
+	height: 70px;
+	margin: auto;
+}
+.isi img{
+	margin-left: 10px;
+	width: 40px;
+}
+.isi p{
+	color: black;
+	margin-top: 10px;
+	font-size: 16px;
+	font-family: 'Roboto',arial;
+	width: 100%;
+	text-align: center;
+}
+.d-flex{
+	width: 100%;
+	height: 100%;
+	display: flex;
+}
+form{
+	width: 90%;
+	margin: auto;
+}
+.in-tab{
+	display: block;
+}
+.in-tab label{
+	padding-top: 20px;
+	padding-bottom: 10px;
+	font-weight: bold;
+	margin-left: 10px;
+	font-family: sans-serif;
+	display: block;
+}
+.in-tab input{
+	width: 90%;
+	border-radius: 5px;
+	outline: none;
+	border: 1px solid lightgray;
+	height: 25px;
+	padding: 0 10px;
+}
+form .in-tab:nth-child(3) input{
+	width: 20%;
+}
+button{
+	margin: auto;
+	margin-top: 20px;
+	padding: 8px;
+	border: none;
+	background-color: green;
+	color: white;
+}
+.modal{
+	display: flex;
+	z-index: 10;
+	position: fixed;
+	width: 100%;
+	top:0;
+	left: 0;
+	background-color: rgba(255, 255, 255, .8);
+	height: 100%;
+	animation: fadeIn .5s;
+}
+@keyframes fadeIn{
+	from{
+		opacity: 0;
+	}
+	to{
+		opacity: 1;
+	}
+}
+.popup{
+	width: 80%;
+	height: 30%;
+	box-shadow: 2px 2px 5px gray;
+	margin: auto;
+	display: flex;
+	background-color: white;
+	border-radius: 10px;
+}
+.popup-ok{
+	margin: auto;
+}
+.popup h1{
+	text-align: center;
+	color: green;
+	font-family: 'Roboto';
+}
+#btn-popup{
+	margin-bottom: 10px;
+	padding: 10px 20px;
+}
+.loading{
+	width: 50px;
+	height: 50px;
+	margin: auto;
+	border-radius: 50%;
+	border-bottom: 5px solid green;
+	animation: loading 1s infinite ease;
+}
+@keyframes loading{
+	from{
+		transform: rotate(0deg);
+		border-bottom: 5px solid green;
+	}
+	50%{
+		transform: rotate(180deg);
+		border-bottom: 5px solid red;
+	}
+	to{
+		transform: rotate(360deg);
+		border-bottom: 5px solid green;
+	}
+}
+.VWview{
+	width: 100%;
+	height: 100%;
+	overflow-y: scroll;
+}
+.VWdata{
+	margin-top: 10px;
+	width: 100%;
+	height: 50px;
+	border:1px solid lightgray;
+	display: flex;
+}
+.VWno{
+	display: flex;
+	width: 10%;
+	height: 100%;
+	border-right: 1px solid black;
+}
+.VWnama{
+	overflow: hidden;
+	width: 50%;
+	border-right: 1px solid black;
+	height: 100%;
+	display: flex;
+}
+.VWnama p{
+	margin:auto 0;
+	margin-left: 20px;
+}
+.VWkelas,.VWdelete{
+	width: 20%;
+	height: 100%;
+	border-right: 1px solid black;
+	display: flex;
+}
+.VWno p,.VWkelas p{
+	margin: auto;
+}
+.VWdelete button{
+	margin: auto;
+	background-color: white;
+	width: 100%;
+	height: 100%;
+}
+.VWdelete i{
+	color: red;
+}
