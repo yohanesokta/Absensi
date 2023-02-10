@@ -38,4 +38,24 @@ class PostAction extends Controller
         DB::table('siswa')->where('id','=',$dataId)->delete();
         return redirect('/view?Suc=1');
     }
+    function GTabsen(){
+        $data = DB::table('siswa')->get();
+        return view('absen',[
+            'main'=>'menu',
+            'headerTab'=>'Absen Siswa',
+            'data'=>$data
+        ]);
+    }
+    function absenChange(){
+        $id = $_POST['dataId'];
+        $in = $_POST['dataIn'];
+        if ($in == '1') {
+            DB::table('siswa')->where('id','=',$id)->increment('sakit',1);
+        }elseif ($in == '2') {
+            DB::table('siswa')->where('id','=',$id)->increment('ijin',1);
+        }
+        else{
+            DB::table('siswa')->where('id','=',$id)->increment('alpha',1);
+        }
+    }
 }

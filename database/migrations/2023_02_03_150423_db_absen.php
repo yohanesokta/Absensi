@@ -21,7 +21,7 @@ return new class extends Migration
             $table->integer('sakit')->default(0);
             $table->integer('ijin')->default(0);
             $table->integer('absen');
-            $table->integer('alpha')->default(9);
+            $table->integer('alpha')->default(0);
             $table->boolean('active')->default(true);
         });
     }

@@ -6,6 +6,7 @@
 	<title>Absen</title>
 	<link rel="stylesheet" href="/css/home.style.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+	@yield('newmeta')
 </head>
 <body>
 	<nav>
@@ -13,12 +14,12 @@
 			<h1>{{ $headerTab }}</h1>
 		</div>
 		<div class="notif">
-			<i class="fa-solid fa-bell"></i>
+			<i class="fa-solid fa-gear"></i>
 		</div>
 	</nav>
 	<div class="navbar-buttom">
 		<div class="nb-menu">
-			<a href="/" class="home @if($main == 'home')active @endif">
+			<a href="/" class="home @if($main == 'home')active @endif" onclick="model.style.display='flex'">
 				<i class="fa-solid fa-house-user"></i>
 			</a>
 			<div class="menu 
@@ -29,7 +30,7 @@
 			</div>
 			<a href="/view" class="menu-profile @if($main == 'profile')
 				active
-			@endif">
+			@endif" onclick="model.style.display='flex'">
 				<i class="fa-solid fa-user"></i>
 			</a>	
 		</div>
@@ -39,5 +40,9 @@
 			@yield('content-void')
 		</div>
 	</div>
+		<script>
+		let model = document.getElementById('blank');
+		model.style.display = 'none';
+	</script>
 </body>
 </html>
