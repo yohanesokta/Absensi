@@ -62,12 +62,19 @@
  		</form>
  	</div>
  </div>
+
+
+	<div class="modal" id="blank" style="display: none;">
+		<div class="loading">
+		</div>
+	</div>
  <script src="js/jquery.min.js"></script>
 
  <script>
  	let globalID = 0
  	modalPup = document.getElementById('modalPop')
  	modalPup.style.display = 'none'
+ 	let blank = document.getElementById('blank')
  	function Pup(id,nama){
  		document.getElementById('ABpopNama').innerHTML = nama
  		globalID = id
@@ -75,7 +82,7 @@
  	}
  	$('#onsubmit').click(function (e) {
  		e.preventDefault();
-
+ 		blank.style.display = 'flex'
  		$.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
@@ -90,6 +97,7 @@
  					dataIn: inVal,
  				},
  				success: function (data) {
+ 					blank.style.display = 'none'
  					const id = 'bx'+globalID
  					modalPup.style.display = 'none'
  					document.getElementById(id).style.background = '#555753'

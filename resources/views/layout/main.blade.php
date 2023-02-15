@@ -22,12 +22,12 @@
 			<a href="/" class="home @if($main == 'home')active @endif" onclick="model.style.display='flex'">
 				<i class="fa-solid fa-house-user"></i>
 			</a>
-			<div class="menu 
+			<a href="/absen" class="menu 
 			@if($main == 'menu')
 				active
 			@endif">
 				<i class="fa-solid fa-bars"></i>
-			</div>
+			</a>
 			<a href="/view" class="menu-profile @if($main == 'profile')
 				active
 			@endif" onclick="model.style.display='flex'">
