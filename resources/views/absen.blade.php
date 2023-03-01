@@ -43,21 +43,20 @@
  		<div class="d-flex" style="height: auto; margin-top: 10px;">
  			<div class="d-flex" style="display:flex; width: 80%; margin:auto; justify-content: space-between;">
  			<div class="l-input" style="display:flex;">
- 				<label for="JAbsen">Sakit</label>
- 				<input style="margin-left: 5px;" type="radio" name="JAbsen" id="JAbsen" value="1">
+ 				<p class="absen-onclick">Sakit</p>
+ 				<input style="margin-left: 5px;" type="hidden" name="JAbsen" id="JAbsen" value="1">
  			</div>
  			<div class="l-input" style="display:flex;">
- 				<label for="JAbsen">Ijin</label>
- 				<input style="margin-left: 5px;" type="radio" name="JAbsen" id="JAbsen" value="2">
+ 				<p class="absen-onclick">Ijin</p>
+ 				<input style="margin-left: 5px;" type="hidden" name="JAbsen" id="JAbsen" value="2">
  			</div>
  			<div class="l-input" style="display:flex;">
- 				<label for="JAbsen">Alpha</label>
- 				<input style="margin-left: 5px;" type="radio" name="JAbsen" id="JAbsen" value="3">
+ 				<p class="absen-onclick">Alpha</p>
+ 				<input style="margin-left: 5px;" type="hidden" name="JAbsen" id="JAbsen" value="3">
  			</div>
  		</div></div>
  			<div class="d-flex">
- 				<button type="submit" id="onsubmit" style="background-color: geren;color: white; padding: 5px 10px;">Enter</button>
- 				<button id="onback" style="background-color: red; color: white; padding: 5px 10px;">Kembali</button>
+ 				<button type="submit" id="onsubmit" style="background-color: geren;color: white; padding:10px 15px; font-size: 18px; border-radius: 20px;">Enter</button>
  			</div>
  		</form>
  	</div>

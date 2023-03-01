@@ -13,9 +13,9 @@
 		<div class="profile">
 			<h1>{{ $headerTab }}</h1>
 		</div>
-		<div class="notif">
-			<i class="fa-solid fa-gear"></i>
-		</div>
+			<a href="/setting" class="notif">
+				<i class="fa-solid fa-gear"></i>
+			</a>
 	</nav>
 	<div class="navbar-buttom">
 		<div class="nb-menu">

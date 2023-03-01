@@ -15,13 +15,10 @@ class PostAction extends Controller
         ]);
     }
     function actionAdd(){
-        $db_nama = $_POST['Name'];
-        $db_kelas = $_POST['kelas'];
-        $db_absen = $_POST['Absen'];
         DB::table('siswa')->insert([
-            'name'=>$db_nama,
-            'kelas'=>$db_kelas,
-            'absen'=>$db_absen
+            'name'=>$_POST['Name'],
+            'kelas'=>$_POST['kelas'],
+            'absen'=>$_POST['Absen']
         ]);
         return redirect('/add?Suc=Fn');
     }
@@ -57,5 +54,14 @@ class PostAction extends Controller
         else{
             DB::table('siswa')->where('id','=',$id)->increment('alpha',1);
         }
+    }
+    function setting(){
+        return view('/requ/setting',[
+            'main'=>'menu',
+            'headerTab'=>'Setting'
+        ]);
+    }
+    function pengaturan(){
+        return 'Ini Pengaturan';
     }
 }
