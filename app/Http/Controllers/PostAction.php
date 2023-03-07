@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -18,12 +19,14 @@ class PostAction extends Controller
         DB::table('siswa')->insert([
             'name'=>$_POST['Name'],
             'kelas'=>$_POST['kelas'],
-            'absen'=>$_POST['Absen']
+            'absen'=>$_POST['Absen'],
+            'userid'=>auth()->user()->id
         ]);
         return redirect('/add?Suc=Fn');
     }
     function ViewData(){
-        $data = DB::table('siswa')->get();
+        $ID = auth()->user()->id;
+        $data = DB::table('siswa')->get()->where('userid','=',$ID);
         return view('viewData',[
             'data'=>$data,
             'main'=>'profile',
@@ -36,7 +39,8 @@ class PostAction extends Controller
         return redirect('/view?Suc=1');
     }
     function GTabsen(){
-        $data = DB::table('siswa')->get();
+        $ID = auth()->user()->id;
+        $data = DB::table('siswa')->get()->where('userid','=',$ID);
         return view('absen',[
             'main'=>'menu',
             'headerTab'=>'Absen Siswa',

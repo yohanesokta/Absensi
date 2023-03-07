@@ -6,11 +6,11 @@
         <div class="AB-menu">
                 <a href="/setting/username" class="ABM">
                     <p>Username</p>
-                    <span>is our username</span>
+                    <span>{{ auth()->user()->name }}</span>
                 </a>
-                <a href="/setting/tgl" class="ABM">
-                    <p>Tanggal Lahir</p>
-                    <span>3-10-2005</span>
+                <a href="/setting/email" class="ABM">
+                    <p>Email Address</p>
+                    <span>{{ auth()->user()->email }}</span>
                 </a>
                 <a href="/setting/pw-reset" class="ABM">
                     <p>Reset Password</p>

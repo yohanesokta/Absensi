@@ -28,6 +28,28 @@ class AuthControllers extends Controller
         ];
 
         User::create($infoLogin); 
+        // $request->session()->flash('succses','Registrasi Berhasil, Login Sekarang');
+        return redirect('/login')->with('succses','Registrasi Berhasil, Login Sekarang');
+    }
+    public function login(Request $request){
+        $valid = $request->validate([
+            'email'=>'required',
+            'password'=>'required',
+        ]);
+        if(Auth::attempt($valid)){
+            $request->session()->regenerate();
+            return redirect()->intended('/');
+        }
+
+         //$request->session()->flash('succses','Registrasi Berhasil, Login Sekarang');
+        return back()->withErrors([
+            'login' => 'Login Gagal',
+        ]);
+    }
+    public function logout(){
+        Auth::logout();
+        request()->session()->invalidate();
+        request()->session()->regenerateToken();
         return redirect('/login');
     }
 }

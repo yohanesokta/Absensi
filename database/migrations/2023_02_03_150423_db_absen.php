@@ -22,7 +22,7 @@ return new class extends Migration
             $table->integer('ijin')->default(0);
             $table->integer('absen');
             $table->integer('alpha')->default(0);
-            $table->boolean('active')->default(true);
+            $table->integer('userid')->default(01);
         });
     }
 
@@ -33,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('db_absen');
+        Schema::dropIfExists('siswa');
     }
 };
