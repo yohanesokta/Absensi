@@ -16,9 +16,11 @@ Route::get('/pengaturan',[PostAction::class,'pengaturan'])->middleware('auth');
 Route::get('/sign',[AuthControllers::class,'SignMenu'])->middleware('guest');
 Route::get('/login',[AuthControllers::class,'LoginMenu'])->name('login')->middleware('guest');
 Route::get('/setting/logout',[AuthControllers::class,'logout'])->middleware('auth');
+Route::get('/setting/username',[PostAction::class,'ChangeUsername'])->middleware('auth');
   // post
 Route::post('/view/delete',[PostAction::class,'viewDelete'])->middleware('auth');
 Route::post('/add/db',[PostAction::class,'actionAdd'])->middleware('auth');
-Route::post('/absen/ch',[PostAction::class,'absenChange'])->middleware('auth');
+Route::post('/absen',[PostAction::class,'absen'])->middleware('auth');
 Route::post('/sign',[AuthControllers::class,'store'])->middleware('guest');
 Route::post('/login',[AuthControllers::class,'login'])->middleware('guest');
+Route::post('/setting/username',[PostAction::class,'Cname'])->middleware('auth');

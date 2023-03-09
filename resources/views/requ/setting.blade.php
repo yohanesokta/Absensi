@@ -8,12 +8,12 @@
                     <p>Username</p>
                     <span>{{ auth()->user()->name }}</span>
                 </a>
-                <a href="/setting/email" class="ABM">
+                <a class="ABM">
                     <p>Email Address</p>
                     <span>{{ auth()->user()->email }}</span>
                 </a>
                 <a href="/setting/pw-reset" class="ABM">
-                    <p>Reset Password</p>
+                    <p>Ganti Password</p>
                 </a>
                 <a href="/setting/logout" class="ABM">
                     <p>Keluar</p>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use App\Models\User;
 use Illuminate\Support\Facades\DB;
 
 class PostAction extends Controller
@@ -47,9 +48,9 @@ class PostAction extends Controller
             'data'=>$data
         ]);
     }
-    function absenChange(){
-        $id = $_POST['dataId'];
-        $in = $_POST['dataIn'];
+    function absen(){
+        $id = $_POST['_dataid'];
+        $in = $_POST['_data'];
         if ($in == '1') {
             DB::table('siswa')->where('id','=',$id)->increment('sakit',1);
         }elseif ($in == '2') {
@@ -58,14 +59,40 @@ class PostAction extends Controller
         else{
             DB::table('siswa')->where('id','=',$id)->increment('alpha',1);
         }
+        return redirect('/absen#bx'.$id)->with($id,'data');
     }
+
     function setting(){
         return view('/requ/setting',[
             'main'=>'menu',
             'headerTab'=>'Setting'
         ]);
     }
-    function pengaturan(){
-        return 'Ini Pengaturan';
+    public function  ChangeUsername(){
+        return view('/requ/Cname',[
+            'main'=>'menu',
+            'headerTab'=>'Ganti Username'
+        ]);
+    }
+    public function Cname(Request $request){
+        $request->validate([
+            'name'=>'required|min:5|max:255|unique:users'
+        ]);
+
+        $infologin = [
+            'email'=>$request->email,
+            'password'=>$request->password
+        ];
+        if(Auth::attempt($infologin)){
+            DB::table('users')->where('email',$request->email)->update([
+                'name'=>$request->name,
+            ]);
+            return redirect('/setting');
+        }else{
+            return back()->withErrors([
+                'login'=>'login lagal'
+            ]);
+        }
+
     }
 }

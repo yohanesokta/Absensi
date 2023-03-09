@@ -4,16 +4,16 @@
 		<form action="/add/db" method="POST">
 			@csrf
 			<div class="in-tab">
-				<label for="Name">Nama</label>
+				<div class="d-flex"><label for="Name">Nama</label></div>
 				<input type="text" name="Name" id="Name" required>
 			</div>
 			<div class="in-tab">
-				<label for="kelas">Kelas</label>
-				<input type="text" name="kelas" id="kelas" required>
+				<div class="d-flex"><label for="kelas">Kelas</label></div>
+				<input type="text" name="kelas" id="kelas" required value="{{ old('kelas') }}">
 			</div>
 			<div class="in-tab">
-				<label for="Absen">Absen</label>
-				<input type="number" name="Absen" id="Absen">
+				<div class="d-flex"><label for="Absen">Absen</label></div>
+				<input type="number" name="Absen" id="Absen" required value="{{ old('Absen') }}">
 			</div>
 			<div class="d-flex">
 				<button type="submit" id="btn-submit">Tambahkan</button>
