@@ -12,7 +12,7 @@
                     <p>Email Address</p>
                     <span>{{ auth()->user()->email }}</span>
                 </a>
-                <a href="/setting/pw-reset" class="ABM">
+                <a href="/setting/password" class="ABM">
                     <p>Ganti Password</p>
                 </a>
                 <a href="/setting/logout" class="ABM">

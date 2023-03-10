@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
 
 class PostAction extends Controller
@@ -94,5 +95,32 @@ class PostAction extends Controller
             ]);
         }
 
+    }
+    public function Vchangepw(){
+        return view('/requ/changepw',[
+            'main'=>'menu',
+            'headerTab'=>'Ganti Password'
+        ]);
+    }
+    public function Pchangepw(Request $request){
+        $request->validate([
+            'password2'=>'required|min:5|max:255',
+            'password3'=>'required_with:password2|same:password2'
+        ]);
+
+        $infologin = [
+            'email'=>$request->email,
+            'password'=>$request->password
+        ];
+        if(Auth::attempt($infologin)){
+            DB::table('users')->where('email',$request->email)->update([
+                'password'=>Hash::make($request->password2)
+            ]);
+            return redirect('/setting');
+        }else{
+            return back()->withErrors([
+                'login'=>'login lagal'
+            ]);
+        }
     }
 }
