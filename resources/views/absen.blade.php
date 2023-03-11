@@ -61,11 +61,6 @@
  	</div>
  </div>
 
-	<div class="modal" id="blank" style="display: none;">
-		<div class="loading">
-		</div>
-	</div>
-
  <script>
 	function Gmit(){
 		document.getElementById('_absenform').style.display = 'none'

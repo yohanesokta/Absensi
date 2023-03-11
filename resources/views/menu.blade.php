@@ -27,8 +27,5 @@
 		<div class="card"></div>
 		<div class="card"></div>
 	</div>
-	<div class="modal" id="blank">
-		<div class="loading"></div>
-	</div>
 @endsection
 

@@ -13,7 +13,6 @@ class PostAction extends Controller
     function add(){
         return view('add',[
             'main'=>'menu',
-            'Suc'=>$_GET['Suc'],
             'headerTab'=>'Tambah User'
         ]);
     }
@@ -24,7 +23,9 @@ class PostAction extends Controller
             'absen'=>$_POST['Absen'],
             'userid'=>auth()->user()->id
         ]);
-        return redirect('/add?Suc=Fn');
+        return back()->withErrors([
+            'succses'=>'succsesfull'
+        ]);
     }
     function ViewData(){
         $ID = auth()->user()->id;

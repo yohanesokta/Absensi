@@ -20,10 +20,7 @@
 			</div>
 		</form>
 	</div>
-	<div class="modal" id="blank">
-		<div class="loading">
-		</div>
-	</div>
+	@error('succses')
 	<div class="modal" id="modal">
 		<div class="popup">
 			<div class="popup-ok">
@@ -34,6 +31,7 @@
 			  </div>
 		</div>
 	</div>
+	@enderror
 	<script>
 		let Modal = document.getElementById('modal');
 		let Sub = document.getElementById('btn-submit');
@@ -41,9 +39,6 @@
 		document.querySelector('form').addEventListener('submit',function(){
 			document.getElementById('blank').style.display = 'flex';
 		});
-		@if($Suc == 'Enter')
-		Modal.style.display = 'none';
-		@endif
 		function pupop(){
 			Modal.style.display = 'none';
 		}

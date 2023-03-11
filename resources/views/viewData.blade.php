@@ -24,10 +24,6 @@
   @endforeach
  </div>
 
-  	<div class="modal" id="blank">
-		<div class="loading">
-		</div>
-	</div>
 	<script>
 		document.getElementById('blank').style.display="none"
 	</script>
